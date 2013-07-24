@@ -29,17 +29,18 @@ public class ActivityFileList extends Activity {
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_CUSTOM_TITLE); //ÉùÃ÷Ê¹ÓÃ×Ô¶¨Òå±êÌâ 
+        requestWindowFeature(Window.FEATURE_CUSTOM_TITLE); 
+     	//  è®¾ç½®æ­£ç¡®çš„æ ‡é¢˜
         setContentView(R.layout.activity_savelist);
-        getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.mytitle_back);//×Ô¶¨Òå²¼¾Ö¸³Öµ
+        getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.mytitle_back);//ï¿½Ô¶ï¿½ï¿½å²¼ï¿½Ö¸ï¿½Öµ
         
         list = (ListView) findViewById(R.id.FilelistView);
         
-        setTitle("Ñ¡ÔñÊÕ²ØµÄÎÊÌâ");
+        setTitle("Ñ¡ï¿½ï¿½ï¿½Õ²Øµï¿½ï¿½ï¿½ï¿½ï¿½");
         
         showFileList();
         
-        // µã»÷¡¾·µ»Ø¡¿°´Å¥
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø¡ï¿½ï¿½ï¿½Å¥
         TextView btnBack = (TextView)findViewById(R.id.btnBackList);
         btnBack.setOnClickListener(new OnClickListener(){
 			public void onClick(View v) {
@@ -63,16 +64,16 @@ public class ActivityFileList extends Activity {
     }
 	
 	public int showFileList(){
-		// ×°ÔØÎÄ¼þÁÐ±í
+		// ×°ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Ð±ï¿½
 		Vector<QAFileInfo> flist = QAFilesManage.getQAFileList();
 		
-		SuperQAToolkit.showTip("¹²"+flist.size()+"¸ö±£´æ½á¹û");
-		//Éú³É¶¯Ì¬Êý×é£¬¼ÓÈëÊý¾Ý
+		SuperQAToolkit.showTip("ï¿½ï¿½"+flist.size()+"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
+		//ï¿½ï¿½ï¿½É¶ï¿½Ì¬ï¿½ï¿½ï¿½é£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         ArrayList<HashMap<String, Object>> listItem = new ArrayList<HashMap<String, Object>>();
         for(int i=0;i<flist.size();i++)
         {
         	HashMap<String, Object> map = new HashMap<String, Object>();
-        	map.put("ItemImage", R.drawable.ic_action_del);//Í¼Ïñ×ÊÔ´µÄID
+        	map.put("ItemImage", R.drawable.ic_action_del);//Í¼ï¿½ï¿½ï¿½ï¿½Ô´ï¿½ï¿½ID
         	
         	String strTitle = flist.get(i).strTitle;
         	map.put("ItemTitle", Html.fromHtml(strTitle)); //
@@ -84,20 +85,20 @@ public class ActivityFileList extends Activity {
         if(listItem.size() == 0)
         {
         	HashMap<String, Object> map = new HashMap<String, Object>();
-	    	map.put("ItemTitle", "Ã»ÓÐ·¢ÏÖ±£´æ½á¹û");
+	    	map.put("ItemTitle", "Ã»ï¿½Ð·ï¿½ï¿½Ö±ï¿½ï¿½ï¿½ï¿½ï¿½");
 	    	listItem.add(map);
         }
         
-    	//Éú³ÉÊÊÅäÆ÷µÄItemºÍ¶¯Ì¬Êý×é¶ÔÓ¦µÄÔªËØ£¬ÕâÀïÓÃSimpleAdapter×÷ÎªListViewµÄÊý¾ÝÔ´
-        SimpleAdapterEx listItemAdapter = new SimpleAdapterEx(this,listItem,//Êý¾ÝÔ´ 
-            R.layout.savelistview_item,//ListItemµÄXMLÊµÏÖ
-            //¶¯Ì¬Êý×éÓëImageItem¶ÔÓ¦µÄ×ÓÏî        
+    	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Itemï¿½Í¶ï¿½Ì¬ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½Ôªï¿½Ø£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½SimpleAdapterï¿½ï¿½ÎªListViewï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´
+        SimpleAdapterEx listItemAdapter = new SimpleAdapterEx(this,listItem,//ï¿½ï¿½ï¿½ï¿½Ô´ 
+            R.layout.savelistview_item,//ListItemï¿½ï¿½XMLÊµï¿½ï¿½
+            //ï¿½ï¿½Ì¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ImageItemï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½        
             new String[] {"ItemImage","ItemTitle", "ItemText", "ItemInfo"}, 
-            //ImageItemµÄXMLÎÄ¼þÀïÃæµÄÒ»¸öImageView,Á½¸öTextView ID
+            //ImageItemï¿½ï¿½XMLï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ImageView,ï¿½ï¿½ï¿½ï¿½TextView ID
             new int[] {R.id.ItemImage,R.id.ItemTitle,R.id.ItemText, R.id.ItemInfo}
         );
        
-        //Ìí¼Ó²¢ÇÒÏÔÊ¾
+        //ï¿½ï¿½ï¿½Ó²ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾
         list.setAdapter(listItemAdapter);
         
     	return 0;
