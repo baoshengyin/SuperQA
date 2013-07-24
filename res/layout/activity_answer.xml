@@ -1,0 +1,38 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffc8">
+ 
+ 	<TextView
+ 	    android:id="@+id/answerInfo"
+ 	    android:layout_width="fill_parent"
+ 	    android:layout_height="wrap_content"
+ 	    android:textSize="18dip"
+ 	    android:background="#505050"  >
+		
+        <requestFocus />
+    </TextView>
+    
+    
+
+    <ListView
+        android:id="@+id/listAnswerView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/answerInfo"
+        android:layout_above="@+id/toolbar"
+        android:background="#ffffc8" >
+    </ListView>
+        
+	<RelativeLayout
+	     android:id="@+id/toolbaranswer"
+	    xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentBottom="true">
+        <include layout="@layout/answer_toolbar"/>
+    </RelativeLayout>
+    
+</RelativeLayout>

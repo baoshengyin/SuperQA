@@ -1,0 +1,41 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+  	android:paddingTop="2dip"
+    android:paddingLeft="0dip"
+    android:background="@drawable/bk_main">
+    
+    <EditText
+        android:id="@+id/editAsk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/btnSearch"
+        android:hint="@string/input_tip_text"
+        android:inputType="text" >
+         
+        <requestFocus />
+    </EditText>
+
+    
+    <Button
+        android:id="@+id/btnSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/button_search" />
+
+    
+    <ListView
+        android:id="@+id/listQuestionView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/editAsk"
+        android:background="@drawable/bk_item" >
+    </ListView>
+   
+</RelativeLayout>
